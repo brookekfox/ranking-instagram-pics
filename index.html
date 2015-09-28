@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Brooke Fox</title>
+
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<h1>Check out the most-liked recent Instagram photos!</h1>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="What's the Instagram handle?">
+    <span class="input-group-btn">
+      <button class="btn btn-info" type="button" onclick="sendInstaReq(document.getElementsByTagName('input')[0].value)">
+        Search!
+      </button>
+    </span>
+</div>
+
+<div id="suggestions">
+  Don't know who to search for? Try one of these!<br>
+  <button class="btn btn-info" onclick="sendInstaReq('momentfeed')">Momentfeed</button>
+  <button class="btn btn-info" onclick="sendInstaReq('ucbtla')">UCB Theatre</button>
+  <button class="btn btn-info" onclick="sendInstaReq('broadcity')">Broad City</button>
+  <button class="btn btn-info" onclick="sendInstaReq('dbacks')">AZ Diamondbacks</button>
+  <button class="btn btn-info" onclick="sendInstaReq('earwolf')">Earwolf Podcasts</button>
+  <button class="btn btn-info" onclick="sendInstaReq('foxbrooke')">Brooke Fox</button>
+</div>
+
+<div id="photos">
+  <h2 id="username"></h2>
+</div>
+</body>
+
+<script src="js/script.js"></script>
+
+</html>
