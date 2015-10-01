@@ -12,33 +12,39 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
-    <!--<script src="/node_modules/angular/angular.js"></script>-->
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
     <script src="js/instaControllers.js"></script>
   </head>
 
   <body ng-app="instagram" ng-controller="InstagramController">
-    <h1>Check out the most-liked Instagram photos!</h1>
+    <div class="container">
+      <h1>Check out your most-liked Instagram photos!</h1>
 
-    <input type="text" class="form-control" placeholder="Enter an Instagram handle." ng-model="user.handle">
-    <span class="input-group-btn">
-      <button class="btn btn-info" type="button" ng-click="sendInstaRequest(user.handle)">Search!</button>
-    </span>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Enter an Instagram handle." ng-model="user.handle">
+        <span class="input-group-btn">
+          <button class="btn btn-info" type="button" ng-click="sendInstaRequest(user.handle)">Search!</button>
+        </span>
+      </div>
 
-    <div>
-      <h4>Try one of these!</h4>
-      <button class="btn btn-info" ng-click="sendInstaRequest('foxbrooke')">Brooke Fox</button>
-      <button class="btn btn-info" ng-click="sendInstaRequest('ucbtla')">UCB Theatre</button>
-      <button class="btn btn-info" ng-click="sendInstaRequest('dbacks')">AZ Diamondbacks</button>
-    </div>
+      <div id="suggestions">
+        <h4>Try one of these!</h4>
+        <button class="btn btn-info" ng-click="sendInstaRequest('foxbrooke')">Brooke Fox</button>
+        <button class="btn btn-info" ng-click="sendInstaRequest('speakr')">Speakr</button>
+        <button class="btn btn-info" ng-click="sendInstaRequest('ucbtla')">UCB Theatre</button>
+        <button class="btn btn-info" ng-click="sendInstaRequest('earwolf')">Earwolf Podcasts</button>
+        <button class="btn btn-info" ng-click="sendInstaRequest('meganamram')">Megan Amram</button>
+        <button class="btn btn-info" ng-click="sendInstaRequest('dbacks')">AZ Diamondbacks</button>
+      </div>
 
-    <div class="photo-container">
-      <h2 id="username">{{user.handle}}</h2>
-      <div ng-repeat="photo in user.photos">
-        <img src="{{photo.image}}" id="photo{{$index}}">
-        <p class="caption" id="caption{{$index}}">{{photo.caption.text}}</p>
-        <p class="likes" id="likes{{$index}}">{{photo.likes}}</p>
+      <div class="photos">
+        <h2 id="handle">{{user.handle}}</h2>
+        <div ng-repeat="photo in user.photos" class="photo-container">
+          <img src="{{photo.image}}" id="photo{{$index}}">
+          <p class="caption" id="caption{{$index}}">{{photo.caption.text}}</p>
+          <div class="likes" id="likes{{$index}}">{{photo.likes}}<br>likes</div>
+        </div>
       </div>
     </div>
   </body>
