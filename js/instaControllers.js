@@ -23,7 +23,7 @@ angular.module("instagram", [])
     });
   }
 }])
-.factory("RequestService", ["$http", "$q", function($http, $q){
+.factory("RequestService", ["$q", function($q){
   return {
     fetch: function(handle) {
       var defer = $q.defer();
